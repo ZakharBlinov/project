@@ -11,5 +11,8 @@
   "license": "ISC",
   "bin": {
     "menu-game": "bin/menu-game.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
