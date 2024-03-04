@@ -1,12 +1,19 @@
+/* eslint-disable no-plusplus */
 import readlineSync from 'readline-sync';
 
-const generateProgression = (length, start, difference) => {
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function generateProgression(length) {
   const progression = [];
-  for (let i = 0; i < length; i += 1) {
-    progression.push(start + difference * i);
+  const initialNumber = getRandomNumber(2, 5);
+  const commonRatio = getRandomNumber(2, 5);
+  for (let i = 0; i < length; i++) {
+    progression.push(initialNumber * commonRatio ** i);
   }
   return progression;
-};
+}
 export default () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
